@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'login-parqueo-admin',
     loadChildren: () => import('./login-parqueo-admin/login-parqueo-admin.module').then( m => m.LoginParqueoAdminPageModule)
   },
+  {
+    path: 'admin',
+    loadChildren: () => import('../../admin/admin.module').then( m => m.AdminPageModule)
+  },
 
 ];
 
