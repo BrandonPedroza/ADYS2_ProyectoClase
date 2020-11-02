@@ -19,13 +19,28 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "allowedCommonJsDependencies": [
+                            "lodash",
+                            "firebase",
+                            "@angular/common/locales/fr",
+                            "lodash/dropRight",
+                            "@firebase/app",
+                            "firebase/app",
+                            "@firebase/database",
+                            "@firebase/firestore",
+                            "@firebase/functions",
+                            "@firebase/performance",
+                            "@firebase/remote-config",
+                            "@firebase/auth"
+                        ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
@@ -122,8 +137,16 @@
               "devServerTarget": "ParqueoWeb:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "ParqueoWeb"
+    }
+  },
+  "defaultProject": "ParqueoWeb",
+  "cli": {
+    "analytics": false
+  }
 }
